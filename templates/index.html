@@ -30,15 +30,25 @@
   </div>
   <div class="row">
     <div class="col-sm-6">
-      <a href="{{ url_for('index') }}">
+      <form action="{{ url_for('index') }}" method="POST">
+
+        <input type="hidden" name="param1" value="val" />
+        <input type="hidden" name="param2" value="val2" />
+      <a href="#" onclick="this.parentNode.submit()">
         <img src="../static/images/{{session_hands[0]}}" alt="">
       </a>
+      </form>
       <br>
     </div>
     <div class="col-sm-6">
-      <a href="{{ url_for('index') }}">
-        <img src="../static/images/{{session_hands[1]}}" alt="">
+      <form action="{{ url_for('index') }}" method="POST">
+
+        <input type="hidden" name="param1" value="val" />
+        <input type="hidden" name="param2" value="val2" />
+      <a href="#" onclick="this.parentNode.submit()">
+        <img src="../static/images/{{session_hands[0]}}" alt="">
       </a>
+      </form>
       <br>
     </div>
   </div>
