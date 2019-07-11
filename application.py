@@ -1,6 +1,5 @@
 from flask import Flask, render_template, request
-import os
-import random
+import os, random
 
 
 app = Flask(__name__)
@@ -9,7 +8,6 @@ app = Flask(__name__)
 # creates a list of hands from image filenames
 os.chdir(r'/Users/jackrickards/Documents/coding/python/CS50W/skin_tracker_app/static/images/')
 hands = [file for file in os.listdir() if 'jpg' in file]
-
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
