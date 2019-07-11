@@ -27,6 +27,9 @@ def index():
     session_hands = hand_picker(storage)
     print(session_hands)
     if request.method == 'POST':
+        worse = request.form['worse']
+        better = request.form['better']
+        print(worse, better, 'sdfsf') # todo: get rid of this
         progress = int(request.form['progress'])
         return render_template('index.html', progress=progress, session_hands=session_hands)
 
