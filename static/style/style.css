@@ -14,13 +14,11 @@ body {
 .container-fluid {
   text-align: center;
   border: 2px solid black;
-  // vertical-align: middle;
 }
 
 .container {
   text-align: center;
   border: 2px solid black;
-  // vertical-align: middle;
   margin-top: 10px;
   margin-bottom: 10px;
   padding: 10px;
@@ -29,35 +27,29 @@ body {
 #navigation {
   background: #58d0f9;
   line-height: 4vh;
-
-  .nav-link {
-    color: black;
-  }
-
-  .active {
-    background-color: #07be29;
-  }
+}
+#navigation .nav-link {
+  color: black;
+}
+#navigation .active {
+  background-color: #07be29;
 }
 
 #body {
   background: #d27479;
   max-width: 95%;
-
-  #row-title {
-    margin-top: 10px;
-    max-height: 20%;
-  }
-
-  img {
-    // transform: rotate(90deg);
-    // max-height: 80%;
-    max-width: 95%;
-    border: 2px solid white;
-  }
+}
+#body #row-title {
+  margin-top: 10px;
+  max-height: 20%;
+}
+#body img {
+  max-width: 95%;
+  border: 3px solid white;
 }
 
-.progress-bar{
-  margin-left: 50px
+.progress-bar {
+  margin-left: 50px;
 }
 
 #footer {
@@ -68,3 +60,5 @@ body {
   height: 2.5rem;
   /* Footer height */
 }
+
+/*# sourceMappingURL=style.css.map */
