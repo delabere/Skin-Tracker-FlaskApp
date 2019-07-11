@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 import os
 import random
 
@@ -13,9 +13,16 @@ hands = [file for file in os.listdir() if 'jpg' in file]
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    progress = 47
     session_hands = random.sample(hands, 2)
-    return render_template('index.html', progress=progress, session_hands=session_hands)
+    if request.method == 'POST':
+        print(
+            f"The worse image was: {request.form['image_worse']} the better image was: {request.form['image_better']}")
+        print(f"The new progress is: {request.form['progress']}")
+        progress = int(request.form['progress'])
+        return render_template('index.html', progress=progress, session_hands=session_hands)
+    else:
+        progress = 0
+        return render_template('index.html', progress=progress, session_hands=session_hands)
 
 
 @app.route('/data')

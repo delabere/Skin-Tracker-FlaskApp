@@ -31,23 +31,24 @@
   <div class="row">
     <div class="col-sm-6">
       <form action="{{ url_for('index') }}" method="POST">
+        <input type="hidden" name="image_worse" value="{{session_hands[0]}}" />
+        <input type="hidden" name="image_better" value="{{session_hands[1]}}" />
+        <input type="hidden" name="progress" value="{{progress + 10}}" />
 
-        <input type="hidden" name="param1" value="val" />
-        <input type="hidden" name="param2" value="val2" />
-      <a href="#" onclick="this.parentNode.submit()">
-        <img src="../static/images/{{session_hands[0]}}" alt="">
-      </a>
+        <a href="#" onclick="this.parentNode.submit()">
+          <img src="../static/images/{{session_hands[0]}}" alt="">
+        </a>
       </form>
       <br>
     </div>
     <div class="col-sm-6">
       <form action="{{ url_for('index') }}" method="POST">
-
-        <input type="hidden" name="param1" value="val" />
-        <input type="hidden" name="param2" value="val2" />
-      <a href="#" onclick="this.parentNode.submit()">
-        <img src="../static/images/{{session_hands[0]}}" alt="">
-      </a>
+        <input type="hidden" name="image_worse" value="{{session_hands[1]}}" />
+        <input type="hidden" name="image_better" value="{{session_hands[0]}}" />
+        <input type="hidden" name="progress" value="{{progress + 10}}" />
+        <a href="#" onclick="this.parentNode.submit()">
+          <img src="../static/images/{{session_hands[0]}}" alt="">
+        </a>
       </form>
       <br>
     </div>
