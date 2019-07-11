@@ -20,9 +20,9 @@ def index():
 
 @app.route('/data')
 def data():
-    return render_template()
+    return render_template('data.html')
 
 
 @app.route('/logout')
 def logout():
-    return render_template()
+    return render_template('logout.html')

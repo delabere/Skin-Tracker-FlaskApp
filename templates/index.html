@@ -1,25 +1,9 @@
 {% extends "base.html" %}
 
-{% block content %}
-<!-- top column for navigation bar-->
-<div class="container-fluid" id="navigation">
-  <div class="row">
-    <div class="col-sm 12">
-      <ul class="nav nav-pills nav-fill">
-        <li class="nav-item">
-          <a class="nav-link" href="#">Data</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="#">Sorter</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Log-Out</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</div>
 
+
+
+{% block content %}
 <!-- middle column for page content-->
 <div class="container" id="body">
   <div class="row-sm-12" id="row-title">
@@ -27,13 +11,13 @@
   </div>
   <div class="row">
     <div class="col-sm-6">
-      <a href="/">
+      <a href="{{ url_for('index') }}">
         <img src="../static/images/{{session_hands[0]}}" alt="">
       </a>
       <br>
     </div>
     <div class="col-sm-6">
-      <a href="/">
+      <a href="{{ url_for('index') }}">
         <img src="../static/images/{{session_hands[1]}}" alt="">
       </a>
       <br>
