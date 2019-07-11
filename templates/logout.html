@@ -1,1 +1,24 @@
 {% extends 'base.html' %}
+
+
+
+{% block content %}
+<!-- top column for navigation bar-->
+<div class="container-fluid" id="navigation">
+  <div class="row">
+    <div class="col-sm 12">
+      <ul class="nav nav-pills nav-fill">
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('data') }}">Data</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('index') }}">Sorter</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="{{ url_for('logout') }}">Log-Out</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+{% endblock %}
