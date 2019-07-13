@@ -31,6 +31,7 @@ def index():
         better = request.form['better']
         print(worse, better, 'sdfsf') # todo: get rid of this
         progress = int(request.form['progress'])
+        if progress >= 100: progress = 100
         return render_template('index.html', progress=progress, session_hands=session_hands)
 
     else:
