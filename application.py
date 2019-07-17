@@ -8,10 +8,10 @@ app = Flask(__name__)
 
 
 # creates a list of hands from image filenames
-os.chdir(r'/Users/jackrickards/Documents/coding/python/CS50W/skin_tracker_app/static/images/')
-hands = [file for file in os.listdir() if 'jpg' in file]
+hands = [file for file in os.listdir(r'static/images') if 'jpg' in file]
+
 # read in stored hand_data
-with open(r'/Users/jackrickards/Documents/coding/python/CS50W/skin_tracker_app/storage.json') as json_file:
+with open(r'static/temp_storage/storage.json') as json_file:
     storage = json.load(json_file)
 
 def hand_picker(storage):
