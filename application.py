@@ -14,13 +14,15 @@ hands = [file for file in os.listdir(r'static/images') if 'jpg' in file]
 with open(r'static/temp_storage/storage.json') as json_file:
     storage = json.load(json_file)
 
+
 def hand_picker(storage):
     hands_data = [[file, storage[file]['position'], storage[file]['times_sorted']]
-                for file in storage]
+                  for file in storage]
     random.shuffle(hands_data)
-    hands_data = (sorted(hands_data, key = lambda x: int(x[2])))
+    hands_data = (sorted(hands_data, key=lambda x: int(x[2])))
     first, second = hands_data.pop(), hands_data.pop()
     return [first, second]
+
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -29,9 +31,10 @@ def index():
     if request.method == 'POST':
         worse = request.form['worse']
         better = request.form['better']
-        print(worse, better, 'sdfsf') # todo: get rid of this
+        print(worse, better, 'sdfsf')  # todo: get rid of this
         progress = int(request.form['progress'])
-        if progress >= 100: progress = 100
+        if progress >= 100:
+            progress = 100
         return render_template('index.html', progress=progress, session_hands=session_hands)
 
     else:
