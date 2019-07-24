@@ -1,11 +1,11 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, Session
 import os
 import random
 import json
 
 
 app = Flask(__name__)
-
+Session(app)
 
 # creates a list of hands from image filenames
 hands = [file for file in os.listdir(r'static/images') if 'jpg' in file]
@@ -35,11 +35,13 @@ def index():
         progress = int(request.form['progress'])
         if progress >= 100:
             progress = 100
-        return render_template('index.html', progress=progress, session_hands=session_hands)
+        return render_template('index.html', progress=progress,
+                               session_hands=session_hands)
 
     else:
         progress = 0
-        return render_template('index.html', progress=progress, session_hands=session_hands)
+        return render_template('index.html', progress=progress,
+                               session_hands=session_hands)
 
 
 @app.route('/data')
